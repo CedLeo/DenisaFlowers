@@ -1,8 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
-// Set to false to hide the customization panel.
-const SHOW_CONTROLS = true;
+const SHOW_CONTROLS = false;
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#f3eee6");
 
