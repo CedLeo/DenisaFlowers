@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shape and color a little 3D flower in your browser."
+    />
+    <title>Petal Studio</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <span class="brand-mark" aria-hidden="true">✿</span>
+        <div>
+          <p class="eyebrow">mwa mwa</p>
+          <h1>For You</h1>
+        </div>
+      </header>
+
+      <section id="controls" class="controls" aria-label="Flower settings">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Make it yours</p>
+            <h2>Flower details</h2>
+          </div>
+          <button id="reset" class="reset-button" type="button">Reset</button>
+        </div>
+
+        <label class="flower-type-setting" for="flower-type">
+          <span>Flower type</span>
+          <select id="flower-type" name="flower-type">
+            <option value="daisy">Daisy</option>
+            <option value="rose">Rose</option>
+            <option value="tulip">Tulip</option>
+          </select>
+        </label>
+
+        <label class="setting">
+          <span>Petals <output id="petal-count">10</output></span>
+          <input
+            data-setting="petals"
+            data-output="petal-count"
+            type="range"
+            min="5"
+            max="16"
+            step="1"
+            value="10"
+          />
+        </label>
+        <label class="setting">
+          <span>Petal layers <output id="layer-count">2</output></span>
+          <input
+            data-setting="layers"
+            data-output="layer-count"
+            type="range"
+            min="1"
+            max="3"
+            step="1"
+            value="2"
+          />
+        </label>
+        <label class="setting">
+          <span>Petal length <output id="petal-length">1.35</output></span>
+          <input
+            data-setting="length"
+            data-output="petal-length"
+            type="range"
+            min="0.8"
+            max="1.8"
+            step="0.05"
+            value="1.35"
+          />
+        </label>
+        <label class="setting">
+          <span>Petal width <output id="petal-width">0.82</output></span>
+          <input
+            data-setting="width"
+            data-output="petal-width"
+            type="range"
+            min="0.45"
+            max="1.2"
+            step="0.05"
+            value="0.82"
+          />
+        </label>
+        <label class="setting">
+          <span>Bloom size <output id="bloom-size">1.00</output></span>
+          <input
+            data-setting="bloom"
+            data-output="bloom-size"
+            type="range"
+            min="0.65"
+            max="1.35"
+            step="0.05"
+            value="1"
+          />
+        </label>
+        <label class="setting">
+          <span>Stem length <output id="stem-length">3.4</output></span>
+          <input
+            data-setting="stemLength"
+            data-output="stem-length"
+            type="range"
+            min="2"
+            max="4.8"
+            step="0.1"
+            value="3.4"
+          />
+        </label>
+
+        <div class="color-settings">
+          <label class="color-setting" for="petal-color">
+            <span>Petals</span>
+            <input
+              id="petal-color"
+              data-setting="petalColor"
+              type="color"
+              value="#e98298"
+            />
+          </label>
+          <label class="color-setting" for="center-color">
+            <span>Center</span>
+            <input
+              id="center-color"
+              data-setting="centerColor"
+              type="color"
+              value="#d99b37"
+            />
+          </label>
+          <label class="color-setting" for="leaf-color">
+            <span>Leaves</span>
+            <input
+              id="leaf-color"
+              data-setting="leafColor"
+              type="color"
+              value="#4b8053"
+            />
+          </label>
+        </div>
+        <p class="hint">Drag to turn · Scroll to zoom</p>
+      </section>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
